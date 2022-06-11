@@ -3416,9 +3416,10 @@ ul.mailbox-list li:hover a, ul.h-list li:hover a {
     border-radius: 0;
     outline: none;
 }
-.login-social-inner .facebook:hover, .login-social-inner .facebook:focus {
-    background-color: #25385F;
-}
+
+    .login-social-inner .facebook:hover, .login-social-inner .facebook:focus {
+        background-color: #25385F;
+    }
 .login-social-inner .facebook span {
     background-color: #31497D;
 }
