@@ -10,6 +10,6 @@ namespace WebUI.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsDeleted { get; set; }
-        public List<ProductCategories> prCategories { get; set; }
+        public ICollection<ProductCategories> prCategories { get; set; }
     }
 }

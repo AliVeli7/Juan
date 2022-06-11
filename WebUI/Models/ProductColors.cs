@@ -10,5 +10,7 @@ namespace WebUI.Models
         public int Id { get; set; }
         public int ProductId { get; set; }
         public int ColorId { get; set; }
+        public Products Product { get; set; }
+        public Colors Color { get; set; }
     }
 }

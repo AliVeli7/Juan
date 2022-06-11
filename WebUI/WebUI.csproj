@@ -5,6 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220610185247_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610185247_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610190658_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610190658_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610190951_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610190951_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610191351_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610191351_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610191712_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610191712_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610191947_CreatTable.cs" />
+    <Compile Remove="Migrations\20220610191947_CreatTable.Designer.cs" />
+    <Compile Remove="Migrations\20220610192745_CreatTables.cs" />
+    <Compile Remove="Migrations\20220610192745_CreatTables.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.25">
       <PrivateAssets>all</PrivateAssets>

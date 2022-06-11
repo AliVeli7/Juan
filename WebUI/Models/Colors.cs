@@ -9,6 +9,6 @@ namespace WebUI.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<ProductColors> productColors { get; set;}
+        public ICollection<ProductColors> productColors { get; set;}
     }
 }

@@ -17,8 +17,8 @@ namespace WebUI.Models
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public bool isNew { get; set; }
-        public List<ProductImages> Images { get; set; }
-        public List<ProductColors> Colors { get; set; }
-        public List<ProductCategories> Categories { get; set; }
+        public ICollection<ProductImages> Images { get; set; }
+        public ICollection<ProductColors> Colors { get; set; }
+        public ICollection<ProductCategories> Categories { get; set; }
     }
 }
