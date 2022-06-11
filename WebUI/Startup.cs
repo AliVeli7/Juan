@@ -39,11 +39,7 @@ namespace WebUI
             }
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                ServeUnknownFileTypes = true,
-                DefaultContentType = "image/png"
-            });
+            
 
             app.UseEndpoints(endpoints =>
             {

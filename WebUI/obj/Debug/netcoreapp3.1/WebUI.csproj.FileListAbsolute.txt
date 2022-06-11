@@ -154,3 +154,4 @@ C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminP
 C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Index.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Create.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
