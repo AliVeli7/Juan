@@ -30,7 +30,7 @@
                                             <a  title="Edit" class="pd-setting-ed"  asp-action="Update" asp-route-id="@category.Id"><i class="fa fa-pencil-square-o" ></i></a>
                                         </td>
                                         <td>
-                                            <a  title="Trash" class="pd-setting-ed" asp-action="Delete" asp-route-id="@category.Id"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                            <a  title="Trash" class="pd-setting-ed" asp-area="AdminPanel" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                 }

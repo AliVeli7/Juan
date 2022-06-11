@@ -6,9 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebUI.Areas.AdminPanel.Controllers
 {
+    [Area("AdminPanel")]
     public class Dashboard : Controller
     {
-        [Area("AdminPanel")]
+        
         public IActionResult Index()
         {
             return View();
