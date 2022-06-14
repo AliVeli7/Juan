@@ -10,5 +10,6 @@ namespace WebUI.ViewModels
     {
         public List<Products> Products { get; set; }
         public List<Categories> Categories { get; set; }
+        public List<Colors> Colors { get; set; }
     }
 }

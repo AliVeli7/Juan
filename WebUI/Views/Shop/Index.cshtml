@@ -3,8 +3,6 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>MyShopPage</h1>
 <!-- main wrapper start -->
 <main>
     <!-- breadcrumb area start -->
@@ -40,12 +38,10 @@
                             </div>
                             <div class="sidebar-body">
                                 <ul class="color-list">
-                                    @*burada dbden gelsin*@
-                                    <li><a href="#">Mens <span>(10)</span></a></li>
-                                    <li><a href="#">Womens <span>(05)</span></a></li>
-                                    <li><a href="#">Sports <span>(15)</span></a></li>
-                                    <li><a href="#">Fabric <span>(12)</span></a></li>
-                                    <li><a href="#">Leather <span>(20)</span></a></li>
+                                    @foreach (var category in Model.Categories)
+                                    {
+                                        <li><a href="#">@category.Name<span>(@category.prCategories.Count)</span></a></li>
+                                    }
                                 </ul>
                             </div>
                         </div>
@@ -78,11 +74,10 @@
                             </div>
                             <div class="sidebar-body">
                                 <ul class="color-list">
-                                    <li><a href="#">gold <span>(05)</span></a></li>
-                                    <li><a href="#">green <span>(12)</span></a></li>
-                                    <li><a href="#">blue <span>(14)</span></a></li>
-                                    <li><a href="#">white <span>(20)</span></a></li>
-                                    <li><a href="#">red <span>(08)</span></a></li>
+                                    @foreach (var color in Model.Colors)
+                                    {
+                                    <li><a href="#">@color.Name <span>(0)</span></a></li>
+                                    }
                                 </ul>
                             </div>
                         </div>
