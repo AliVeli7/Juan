@@ -37,6 +37,11 @@ namespace WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+
+            }   
+            
             app.UseStaticFiles();
             app.UseRouting();
             app.Use(async (context, next) =>
