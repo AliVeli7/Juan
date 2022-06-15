@@ -40,7 +40,7 @@
                                 <ul class="color-list">
                                     @foreach (var category in Model.Categories)
                                     {
-                                        <li><a href="#">@category.Name<span>(@category.prCategories.Count)</span></a></li>
+                                        <li><a asp-controller="Shop" asp-action="Detail" >@category.Name<span>(@category.prCategories.Count)</span></a></li>
                                     }
                                 </ul>
                             </div>
