@@ -29,12 +29,13 @@
                                                             <span class="text-danger" asp-validation-for="Photos"></span>
                                                             <input type="text" asp-for="Name" class="form-control" name="Name" placeholder="Product Name">
                                                             <input type="text" asp-for="Price" class="form-control" name="Name" placeholder="Price">
-                                                            <select name="Colors">
+                                                            <select name="colorId">
                                                                 @foreach (Colors item in ViewBag.colors)
                                                                 {
-                                                                    <option value="@item.Name">@item.Name</option>
+                                                                    <option value="@item.Id">@item.Name</option>
                                                                 }
                                                             </select>
+                                                            <span class="text-danger" asp-validation-for="Colors"></span>
 
                                                         </div>
                                                         <div class="row">

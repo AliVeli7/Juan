@@ -38,7 +38,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProductCreateVM product)
+        public async Task<IActionResult> Create(ProductCreateVM product,int colorId)
         {
 
             if (!ModelState.IsValid)
@@ -58,18 +58,23 @@ namespace WebUI.Areas.AdminPanel.Controllers
             Products NewProduct = new Products
             {
                 Name = product.Name,
-                Price = product.Price
+                Price = product.Price,
+               
             };
             string image = await product.Photo.SaveFileAsync(_env.WebRootPath, "assets/img/product");
+            ProductColors productcolor = new ProductColors()
+            {
+                ColorId = colorId
+            };
 
             ProductImages productImages = new ProductImages
             {
                 Url = image
             };
             List<ProductImages> images = new List<ProductImages>();
+            List<ProductColors> colors = new List<ProductColors>();
             images.Add(productImages);
-            ICollection<ProductColors> colors = new List<ProductColors>();
-            colors = product.Colors;
+            colors.Add(productcolor);
             NewProduct.Images = images;
             NewProduct.Colors = colors;
             await _context.Products.AddAsync(NewProduct);
