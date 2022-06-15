@@ -24,6 +24,6 @@ namespace WebUI.Models
         public ICollection<ProductColors> Colors { get; set; }
         public ICollection<ProductCategories> Categories { get; set; }
         [NotMapped, Required]
-        public ICollection<IFormFile> Photos { get; set; }
+        public IFormFile Photo { get; set; }
     }
 }

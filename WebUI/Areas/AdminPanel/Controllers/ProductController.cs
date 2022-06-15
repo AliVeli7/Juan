@@ -23,7 +23,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
             _context = context;
             _env = env;
             products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category)
-                  .Where(p => !p.isDeleted).Take(6).ToList();
+                  .Where(p => !p.isDeleted).ToList();
         }
         public IActionResult Index()
         {
@@ -38,7 +38,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ProductCreateVM product,int colorId)
+        public async Task<IActionResult> Create(Products product,int colorId)
         {
 
             if (!ModelState.IsValid)

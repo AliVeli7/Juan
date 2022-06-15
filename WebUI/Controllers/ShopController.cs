@@ -25,7 +25,7 @@ namespace WebUI.Controllers
             ShopViewModel shop = new ShopViewModel
             {
                 Products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category)
-                .Where(p => !p.isDeleted ).Take(9).ToList(),
+                .Where(p => !p.isDeleted ).ToList(),
                 Categories = _context.Categories.Where(ct => !ct.IsDeleted)
                 .Include(pc => pc.prCategories).ThenInclude(ct => ct.Product).ToList(),
                 Colors = _context.Colors.ToList()
