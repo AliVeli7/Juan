@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace WebUI.Helpers
 {
-    public class Extension
+    public static class Extension
     {
         public static bool CheckFileSize(this IFormFile file, int kb)
         {

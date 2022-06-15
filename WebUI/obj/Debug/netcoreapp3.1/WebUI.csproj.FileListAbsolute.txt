@@ -156,3 +156,4 @@ C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminP
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\WebUI.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Create.cshtml.g.cs

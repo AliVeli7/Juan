@@ -13,9 +13,10 @@ namespace WebUI.ViewModels.ProductViewModel
     {
         public string Name { get; set; }
         public int DiscountPercent { get; set; }
+        public double Price { get; set; }
         public bool isDeleted { get; set; }
         public ICollection<ProductImages> Images { get; set; }
-
+        public ICollection<ProductColors> Colors { get; set; }
         [NotMapped, Required]
         public IFormFile Photo { get; set; }
     }

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace WebUI.Models
 {
@@ -20,5 +23,7 @@ namespace WebUI.Models
         public ICollection<ProductImages> Images { get; set; }
         public ICollection<ProductColors> Colors { get; set; }
         public ICollection<ProductCategories> Categories { get; set; }
+        [NotMapped, Required]
+        public ICollection<IFormFile> Photos { get; set; }
     }
 }
