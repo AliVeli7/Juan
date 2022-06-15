@@ -58,7 +58,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
             Products NewProduct = new Products
             {
                 Name = product.Name,
-                Price = product.Price,
+                Price = product.Price
                
             };
             string image = await product.Photo.SaveFileAsync(_env.WebRootPath, "assets/img/product");
