@@ -1,8 +1,72 @@
-﻿
+﻿@using WebUI.Models
+@model IEnumerable<Products>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/AdminPanel/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<div class="all-content-wrapper">
+    <div class="product-status mg-b-30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="product-status-wrap">
+                        <h4>Products List</h4>
+                        <div class="add-product">
+                            <a href="product-edit.html">Add Product</a>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product Title</th>
+                                <th>IsNEw</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Setting</th>
+                            </tr>
 
+                            @foreach (var product in Model)
+                            {
+                                <tr>
+                                    <td><img src="img/new-product/@product.Images.FirstOrDefault().Url" alt="" /></td>
+                                    <td>@product.Name</td>
+                                    <td>
+                                        <button class="pd-setting">@product.isNew</button>
+                                    </td>
+                                    <td>@product.Price</td>
+                                    <td>@product.IsinStock</td>
+                                    <td>
+                                        <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                        <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                    </td>
+                                    
+
+                                </tr>
+                            }
+                            </table>
+                        <div class="custom-pagination">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018 <a href="https://colorlib.com/wp/templates/">Colorlib</a> All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

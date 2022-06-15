@@ -54,18 +54,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-                return BadRequest();
-            Categories categoryDb = _context.Categories.Where(c => c.IsDeleted).FirstOrDefault(c => c.Id == id);
-            if (categoryDb == null)
-                return NotFound();
-            // _context.Categories.Remove(categoryDb);
-            categoryDb.IsDeleted = true;
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        
 
         public IActionResult Update(int? id)
         {
@@ -98,6 +87,20 @@ namespace WebUI.Areas.AdminPanel.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return BadRequest();
+            Categories categoryDb = _context.Categories.Where(c => c.IsDeleted).FirstOrDefault(c => c.Id == id);
+            if (categoryDb == null)
+                return NotFound();
+            // _context.Categories.Remove(categoryDb);
+            categoryDb.IsDeleted = true;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }       
     }
 }
     

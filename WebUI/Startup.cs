@@ -44,21 +44,14 @@ namespace WebUI
             
             app.UseStaticFiles();
             app.UseRouting();
-            app.Use(async (context, next) =>
-            {
-                await next();
-                if (context.Response.StatusCode == 404)
-                {
-                    context.Request.Path = "/AdminPanel";
-                    await next();
-                }
-            });
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                 name: "areas",
                 pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                 "default",
                 "{controller=Home}/{action=index}/{id?}"
