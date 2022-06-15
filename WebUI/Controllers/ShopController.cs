@@ -37,7 +37,7 @@ namespace WebUI.Controllers
         {
             ShopViewModel shop = new ShopViewModel
             {
-                Products = _context.Products.Where(pr => pr.Id == Id && pr.isDeleted == false).ToList(),
+                Products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category).Where(pr => pr.Id == Id && pr.isDeleted == false).ToList(),
             };
             return View(shop);
 
