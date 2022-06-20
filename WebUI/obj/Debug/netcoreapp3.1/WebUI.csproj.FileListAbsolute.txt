@@ -166,3 +166,13 @@ C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductPartial.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Products\Default.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\Forgot.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberLoginForm.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberRegisterForm.cshtml.g.cs

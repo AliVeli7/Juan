@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebUI.Models;
 
 namespace WebUI.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext: IdentityDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext>options):base(options)
         { }
@@ -16,6 +17,7 @@ namespace WebUI.DAL
         public DbSet<Colors> Colors { get; set; }
         public DbSet<ProductColors> ProductColours { get; set; }
         public DbSet<ProductImages> ProductImages { get; set; }
+        public DbSet<AppUser> Users { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<Categories> Categories { get; set; }
         public DbSet<ProductCategories> ProductsCategories { get; set; }
