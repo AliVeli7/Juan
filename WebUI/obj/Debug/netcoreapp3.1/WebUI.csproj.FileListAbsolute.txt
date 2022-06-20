@@ -176,3 +176,5 @@ C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensio
 C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberLoginForm.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberRegisterForm.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\PagedList.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\PagedList.Mvc.dll

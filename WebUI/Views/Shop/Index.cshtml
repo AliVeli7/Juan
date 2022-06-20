@@ -1,4 +1,6 @@
 ﻿@model ShopViewModel
+@using PagedList
+@Model.Products=@Model.products
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -147,16 +149,47 @@
                         <!-- shop product top wrap start -->
 
                         <div class="shop-product-wrap grid-view row mbn-50" id="product-list">
-                            <partial name="_ProductPartial" model="@Model.Products" />
+                            @foreach (var product in Model.products)
+                            {
+                                <div class="col-lg-4 col-sm-6">
+                                    <!-- product grid item start -->
+                                    <div class="product-item mb-53">
+
+                                        <!-- product single item start -->
+                                        <div class="product-item mb-50">
+                                            <div class="product-thumb">
+                                                <a asp-controller="Shop" asp-action="Detail" asp-route-id="@product.Id">
+                                                    <img src="~/assets/img/product/@product.Images.FirstOrDefault().Url" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="product-content">
+                                                <h5 class="product-name">
+                                                    <a href="product-details.html">@product.Name</a>
+                                                </h5>
+                                                <div class="price-box">
+                                                    <span class="price-regular">$@product.Price</span>
+                                                </div>
+                                                <div class="product-action-link">
+                                                    <a href="#" data-toggle="tooltip" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
+                                                    <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="ion-bag"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick_view">
+                                                        <span data-toggle="tooltip"
+                                                              title="Quick View"><i class="ion-ios-eye-outline"></i></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- product grid item end -->
+                                    </div>
+                                </div>
+                            }
                         </div>
                         <!-- start pagination area -->
                         <div class="paginatoin-area text-center mt-45">
-                            <ul class="pagination-box">
-                                <li><a class="Previous" href="#"><i class="ion-ios-arrow-left"></i></a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><input type="hidden" id="count" value="@ViewBag.ProductCount" >
-                                    <button class="btn btn-success" id="loadProduct"><i class="ion-ios-arrow-right"></i></></button></li>
-                            </ul>
+                           Page @(Model.Products.PageCount< Model.pageNumber ? 0 : Model.pageNumber) of @Model.Products.PageCount
+                            
+                            PagedListPager(Model, page => Url.Action("Index",
+                           new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))
                         </div>
 
                         <!-- end pagination area -->

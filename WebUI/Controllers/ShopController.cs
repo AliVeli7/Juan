@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebUI.DAL;
 using WebUI.ViewModels;
 using WebUI.Models;
+using PagedList;
 
 namespace WebUI.Controllers
 {
@@ -22,42 +23,31 @@ namespace WebUI.Controllers
             _env = env;
             _count = context.Products.Where(p => !p.isDeleted).Count();
         }
-        public IActionResult Index()
+        public IActionResult Index(int? page)
         {
             ShopViewModel shop = new ShopViewModel
             {
-                Products = _context.Products.Where(c => !c.isDeleted)
+                 pageSize = 3,
+                 pageNumber = (page ?? 1),
+                 products = _context.Products.Where(c => !c.isDeleted)
                 .Include(p => p.Images).Include(p => p.Categories).OrderByDescending(p => p.Id)
-                .Take(8).ToList(),
+                .ToList(),
                 Categories = _context.Categories.Where(ct => !ct.IsDeleted)
                 .Include(pc => pc.prCategories).ThenInclude(ct => ct.Product).ToList(),
                 Colors = _context.Colors.ToList()
+                
             };
             return View(shop);
         }
 
         public IActionResult Detail(int? Id)
         {
-            ShopViewModel shop = new ShopViewModel
-            {
-                Products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category).Where(pr => pr.Id == Id && pr.isDeleted == false).ToList(),
-            };
-            return View(shop);
+
+            List<Products> products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category).Where(pr => pr.Id == Id && pr.isDeleted == false).ToList();
+            return View(products);
 
         }
 
-        public IActionResult LoadProducts(int skip = 8)
-        {
-            if (skip >= _count)
-            {
-                return BadRequest();
-            }
-            List<Products> products = _context.Products.Where(c => !c.isDeleted)
-
-                .Include(p => p.Images).Include(p => p.Categories).OrderByDescending(p => p.Id)
-                .Skip(skip).Take(10).ToList();
-            //return Json(products);
-            return PartialView("_ProductPartial", products);
-        }
+        
     }
 }
