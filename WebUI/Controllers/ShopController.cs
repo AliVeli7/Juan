@@ -15,17 +15,20 @@ namespace WebUI.Controllers
     {
         private AppDbContext _context { get; }
         private IWebHostEnvironment _env { get; }
+        private int _count { get; }
         public ShopController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
+            _count = context.Products.Where(p => !p.isDeleted).Count();
         }
         public IActionResult Index()
         {
             ShopViewModel shop = new ShopViewModel
             {
-                Products = _context.Products.Include(p => p.Images).Include(p => p.Categories).ThenInclude(pc => pc.Category)
-                .Where(p => !p.isDeleted).ToList(),
+                Products = _context.Products.Where(c => !c.isDeleted)
+                .Include(p => p.Images).Include(p => p.Categories).OrderByDescending(p => p.Id)
+                .Take(8).ToList(),
                 Categories = _context.Categories.Where(ct => !ct.IsDeleted)
                 .Include(pc => pc.prCategories).ThenInclude(ct => ct.Product).ToList(),
                 Colors = _context.Colors.ToList()
@@ -41,7 +44,20 @@ namespace WebUI.Controllers
             };
             return View(shop);
 
+        }
 
+        public IActionResult LoadProducts(int skip = 8)
+        {
+            if (skip >= _count)
+            {
+                return BadRequest();
+            }
+            List<Products> products = _context.Products.Where(c => !c.isDeleted)
+
+                .Include(p => p.Images).Include(p => p.Categories).OrderByDescending(p => p.Id)
+                .Skip(skip).Take(10).ToList();
+            //return Json(products);
+            return PartialView("_ProductPartial", products);
         }
     }
 }

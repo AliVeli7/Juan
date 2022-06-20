@@ -32,7 +32,6 @@ namespace WebUI.Controllers
                 Blogs = _context.Blogs.ToList(),
                 Brands = _context.Brands.ToList()
             };
-
             return View(home);
         }
 

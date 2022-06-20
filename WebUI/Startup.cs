@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebUI.DAL;
+using WebUI.Services;
 
 namespace WebUI
 {
@@ -24,10 +25,18 @@ namespace WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+               options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+           );
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(20);
+            });
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(_config["ConnectionStrings:Default"]);
             });
+            services.AddScoped<SettingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,21 +46,23 @@ namespace WebUI
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-
-            }   
-            
             app.UseStaticFiles();
             app.UseRouting();
-
+            app.UseSession();
+            app.Use(async (context, next) =>
+            {
+                await next();
+                if (context.Response.StatusCode == 404)
+                {
+                    context.Request.Path = "/Home";
+                    await next();
+                }
+            });
             app.UseEndpoints(endpoints =>
             {
-
                 endpoints.MapControllerRoute(
                 name: "areas",
                 pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
-
                 endpoints.MapControllerRoute(
                 "default",
                 "{controller=Home}/{action=index}/{id?}"

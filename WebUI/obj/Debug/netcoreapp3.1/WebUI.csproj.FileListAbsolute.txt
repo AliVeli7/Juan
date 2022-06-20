@@ -159,3 +159,10 @@ C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shop\I
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Create.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Update.cshtml.g.cs
 C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Detail.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\User\source\repos\Juan\WebUI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Footer\Default.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Header\Default.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProductPartial.cshtml.g.cs
+C:\Users\User\source\repos\Juan\WebUI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Products\Default.cshtml.g.cs

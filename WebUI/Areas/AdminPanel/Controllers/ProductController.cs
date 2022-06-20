@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebUI.DAL;
 using WebUI.Helpers;
 using WebUI.Models;
-using WebUI.ViewModels.ProductViewModel;
+using WebUI.ViewModels;
 
 namespace WebUI.Areas.AdminPanel.Controllers
 {
@@ -111,7 +111,7 @@ namespace WebUI.Areas.AdminPanel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, Products newProduct, int colorId)
+        public async Task<IActionResult> Update(int? id, ProductCreateVM newProduct, int colorId)
         {
             if (id == null)
             {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using WebUI.Models;
 
-namespace WebUI.ViewModels.ProductViewModel
+namespace WebUI.ViewModels
 {
     public class ProductCreateVM
     {

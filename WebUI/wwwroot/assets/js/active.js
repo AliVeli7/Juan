@@ -1,3 +1,22 @@
+$(document).ready(function () {
+
+	$(document).on('click', '#loadProduct', function () {
+		let maxCount = $("#count").val();
+		let length = $("#product-list").children().length;
+		$.ajax({
+			url: `https://localhost:59316/shop/index/LoadProducts?skip=${length}`,
+			method: "GET",
+			success: function (res) {
+				$("#product-list").append(res);
+				if ($("#product-list").children().length >= maxCount) {
+					$("#loadProduct").css("display", "none");
+				}
+			}
+		})
+	})
+
+})
+
 (function ($) {
 	"use strict";
 
